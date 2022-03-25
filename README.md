@@ -1,5 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3988e9ec-823e-44ca-a4b5-74bcc108c78d/deploy-status)](https://app.netlify.com/sites/friendly-murdock-aca4e6/deploys)
-
 # Les livres de recettes de W4LL
 
 ## A quoi ça sert
