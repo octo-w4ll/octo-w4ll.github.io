@@ -1,0 +1,86 @@
+<h1>Blog</h1>
+<h2>Exemple: panier sticky</h2>
+<p>Principe en quelques mots :
+Le panier répond aux critères suivants :</p>
+<ul>
+<li>Placé dans le corps du contenu</li>
+<li>Lorsque le contenu adjacent (en violet, fréquemment la liste des éléments à ajouter au panier) atteint la taille maximale du conteneur parent (ou de la fenêtre) le panier atteint sa taille maximale et passe en overflow (apparition d’une barre de scroll) (cas 3)</li>
+<li>Si le conteneur adjacent atteint la taille maximale mais pas le panier (cas 2), le panier restera en position fixe en haut du conteneur et ne sera pas impacté par le scroll du conteneur adjacent</li>
+</ul>
+<p>Pour le voir en action :</p>
+<ul>
+<li><a href="https://codepen.io/floragc-octo/pen/WNZqPKo">Codepen</a></li>
+</ul>
+<p>code HTML</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Exemple de panier fixe&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;
+        &lt;article&gt; &lt;!-- Conteneur adjacent --&gt;
+            &lt;p&gt;...&lt;/p&gt;
+        &lt;/article&gt;
+        &lt;aside&gt; &lt;!-- Panier --&gt;
+            &lt;h1&gt;Panier&lt;/h1&gt;
+            &lt;article&gt;
+              &lt;p&gt;...&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>code CSS</p>
+<pre><code>:root {
+    --space: 1rem; // a expliquer
+}
+
+* {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    gap: 10px;
+  
+    padding: var(--space);
+}
+
+main &gt; article {
+    border: 3px solid black;
+    padding: 10px 20px;
+  
+    flex-basis: 0; // a expliquer
+    flex-grow: 999; // a expliquer
+    min-width: 40%;
+}
+
+aside {
+    box-sizing: border-box; // a expliquer
+    border: 3px solid black;
+    padding: 10px 20px;
+  
+    flex-grow: 1; // a expliquer
+    flex-basis: 400px; // a expliquer
+    align-self: start;
+  
+    position: sticky; // a expliquer
+  
+    top: var(--space);
+    bottom: var(--space);
+    max-height: calc(100vh - 2 * var(--space)); // a expliquer
+    
+    overflow: scroll; // a expliquer
+}
+
+aside h1 {
+    color: white;
+    background: black;
+  
+    padding: 5px 10px;
+    margin: 0;
+}
+</code></pre>

@@ -1,0 +1,22 @@
+---
+title: Cookbook
+layout: layouts/page.njk
+---
+
+<h2>Nos recettes</h2>
+
+<section class="list recipe--list">
+  {% for recipe in collections.recipe | reverse %} {% if loop.index0 < 3 %}
+  <article class="recipe recipe--list__item">
+    <header class="recipe__title">
+      {{ recipe.data.title }}
+    </header>
+    <div class="recipe__abstract">
+      {{ recipe.data.description }}
+    </div>
+    <footer class="recipe__link">
+      <a href="{{ recipe.url }}">Lire la recette</a>
+    </footer>
+  </article>
+  {% endif %} {% endfor %}
+</section>
