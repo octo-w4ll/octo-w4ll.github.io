@@ -4,7 +4,7 @@ on:
     branches: [ main, FEAT/init_blog ]
 
 jobs:
-  build-demo:
+  build:
     runs-on: ubuntu-latest
 
     strategy:
