@@ -65,7 +65,7 @@ nav a:active {
   border: 1px solid var(--hover-border-color);
 }
 
-footer {
+body > footer {
   border-top: 1px solid var(--hover-border-color);
   text-align: center;
   margin-top: 1rem;
