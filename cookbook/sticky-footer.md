@@ -9,7 +9,9 @@ layout: layouts/cookbook.njk
 ## Cas d'usage
 Placer le footer en bas de l’écran lorsque le contenu du site n’est pas suffisant pour remplir tout le viewport, ou en dessous de la ligne de flottaison si le contenu du site est plus grand que le viewport.
 
-![Structure html header, content et footer](../assets/illustrations/sticky-footer.png)
+  <p class="illustration--centered">
+    <img width="300px" src="/assets/illustrations/sticky-footer.png" alt="Structure html header, content et footer">
+  </p>
 
 ## Recipe
 Nous vous recommandons d’utiliser Flexbox, pour son côté moderne et flexible.
