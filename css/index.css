@@ -151,3 +151,12 @@ body > footer {
   margin-inline-start: 3rem;
   padding-inline-start: 1rem;
 }
+
+.illustration--centered  {
+  width: 100%;
+}
+
+.illustration--centered img {
+  display: block;
+  margin: auto;
+}
