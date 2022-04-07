@@ -1,6 +1,5 @@
 <h1>Quelques infos sur la contribution</h1>
-<h2>Le format du template d'article</h2>
-<h3>La cartouche</h3>
+<h3>Le format du template d'article - le cartouche</h3>
 <p>Il est important de laisser les noms des attributs sur chaque ligne.
 On ne modifie que ce qui vient après.</p>
 <pre class="language-md"><code class="language-md"><span class="token front-matter-block"><span class="token punctuation">---</span><br><span class="token front-matter yaml language-yaml">title: Lorem Ipsum <br>description: Un article a propos de Lorem ipsum<br>tags: ['recipe']<br>date: 2021-06-19<br>layout: layouts/cookbook.njk</span><br><span class="token punctuation">---</span></span></code></pre>
@@ -26,7 +25,7 @@ On ne modifie que ce qui vient après.</p>
 </tr>
 <tr>
 <td>date</td>
-<td>On ne gère pas encore l'insertion automatique de la date, inscrit la date de la création de l'article au format <code>AAAA-MM-JJ</code></td>
+<td>La date de création de l'article doit être au format <code>AAAA-MM-JJ</code></td>
 </tr>
 <tr>
 <td>layout</td>
@@ -34,34 +33,16 @@ On ne modifie que ce qui vient après.</p>
 </tr>
 </tbody>
 </table>
-<h3>Le contenu</h3>
-<p>N'importe quoi dans que cela respecte la structure du markdown.
-Quelques exemples :</p>
-<hr>
-<h1>Titre</h1>
-<h2>Titre 2</h2>
-<h3>Titre 3</h3>
-<h4>Titre 4</h4>
-<table>
-<thead>
-<tr>
-<th>Syntax</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Header</td>
-<td>Title</td>
-</tr>
-<tr>
-<td>Paragraph</td>
-<td>Text</td>
-</tr>
-</tbody>
-</table>
-<pre class="language-html"><code class="language-html">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span><br>       exemple de code HTML <br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<h2>Le format du template d'article - le contenu</h2>
+<p>Le contenu doit respecter la syntaxe markdown</p>
 <blockquote>
-<p>citation</p>
+<p>Note: Le HTML est interprété, vous pouvez donc (avec parcimonie) ajouter des balises dans vos articles.</p>
 </blockquote>
-<p>[Lien](url du lien)</p>
+<h3>Quelques exemples de syntaxe markdown :</h3>
+<hr>
+<pre class="language-md"><code class="language-md"><span class="token title important"><span class="token punctuation">#</span> Titre</span><br><span class="token title important"><span class="token punctuation">##</span> Titre 2</span><br><span class="token title important"><span class="token punctuation">###</span> Titre 3</span><br><span class="token title important"><span class="token punctuation">####</span> Titre 4</span><br><br><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important"> Syntax      </span><span class="token punctuation">|</span><span class="token table-header important"> Description </span><span class="token punctuation">|</span><br></span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">-----------</span> <span class="token punctuation">|</span> <span class="token punctuation">-----------</span> <span class="token punctuation">|</span><br></span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> Header      </span><span class="token punctuation">|</span><span class="token table-data"> Title       </span><span class="token punctuation">|</span><br><span class="token punctuation">|</span><span class="token table-data"> Paragraph   </span><span class="token punctuation">|</span><span class="token table-data"> Text        </span><span class="token punctuation">|</span><br></span></span><br><span class="token code keyword">    ```html<br>        &lt;p><br>        exemple de code HTML <br>        &lt;/p><br>    ```</span><br><br><span class="token blockquote punctuation">></span> citation<br><br>[Lien](url du lien)</code></pre>
+<h3>Cas particulier des images</h3>
+<hr>
+<p>Les images sont stockées dans le dossier <code>assets/illustrations</code>.</p>
+<p>Pour y accéder après le build il faut placer l'image dans une balise ayant comme classe CSS <code>&quot;illustration--centered&quot;</code> et indiquer dans l'URL <code>/assets/illustrations</code> comme dans l'exemple ci-dessous:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>illustration--centered<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>300px<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/assets/illustrations/sticky-footer.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Ma description<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
