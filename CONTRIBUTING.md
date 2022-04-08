@@ -1,5 +1,13 @@
 # Quelques infos sur la contribution
 
+## Initier votre article
+
+1- Créer un dossier portant le nom de votre article dans `cookbook`
+2- Créer dans ce dossier un fichier `index.md` en partant du template `template.md`
+3- Editer votre fichier `index.md` :) 
+4- Lance l'app avec `npm run start` pour vérifier le rendu de ton article
+## Le format du template d'article
+
 ### Le format du template d'article - le cartouche
 Il est important de laisser les noms des attributs sur chaque ligne. 
 On ne modifie que ce qui vient après.
@@ -56,12 +64,12 @@ Le contenu doit respecter la syntaxe markdown
 ### Cas particulier des images
 ---
 
-Les images sont stockées dans le dossier `assets/illustrations`.
+Les images sont stockées dans le même dossier que le fichier md de l'article.
 
-Pour y accéder après le build il faut placer l'image dans une balise ayant comme classe CSS `"illustration--centered"` et indiquer dans l'URL `/assets/illustrations` comme dans l'exemple ci-dessous:
+Pour y accéder après le build il faut placer l'image dans une balise ayant comme classe CSS `"illustration--centered"` et indiquer dans l'URL `/` comme dans l'exemple ci-dessous:
 
 ```html
 <p class="illustration--centered">
-  <img width="300px" src="/assets/illustrations/sticky-footer.png" alt="Ma description" >
+  <img width="300px" src="/sticky-footer.png" alt="Ma description" >
 </p>
 ```
