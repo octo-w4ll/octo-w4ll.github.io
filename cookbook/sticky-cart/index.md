@@ -8,9 +8,11 @@ layout: layouts/cookbook.njk
 
 ## Cas d'usage étudié
 Le panier répond aux critères suivants : 
-- Il doit être placé dans le corps du contenu 
-- Si le conteneur adjacent (ex: liste des éléments à ajouter au panier) atteint la taille maximale mais pas le panier, le panier restera en position fixe en haut du conteneur et ne sera pas impacté par le scroll du conteneur adjacent
-- Lorsque le contenu adjacent atteint la taille maximale du conteneur parent (ou de la fenêtre) et le panier aussi, ce dernier passe en overflow (apparition d’une barre de scroll)
+Placé dans un conteneur avec un conteneur adjacent (ex: liste des éléments à ajouter au panier). Le panier n'est pas impacté par son voisin et reste positionné fixement. S'il atteind la taille max de son parent, sa taille devient fixe et la barre de défilement apparait.
+
+<p class="illustration--centered">
+  <img width="300px" src="/sticky-cart.png" alt="" >
+</p>
 
 ## Solution proposée
 
