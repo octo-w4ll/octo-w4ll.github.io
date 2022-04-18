@@ -32,5 +32,5 @@ Le markdown est un format standardisé pour la rédaction de contenu.
 Tu es développeur ? Ton IDE préféré supporte probablement nativement ce format. 
 Si ça n'est pas le cas, une recherche rapide dans les plugins doit pouvoir t'aider.
 
-Tu n'est pas développeur et/ou tu souhaites utiliser un outil différent ? Tu peux utiliser un outil en ligne, par exemple
+Tu n'es pas développeur ou tu souhaites utiliser un outil différent ? Tu peux utiliser un outil en ligne, par exemple
 [StackEdit](https://stackedit.io/app#) qui est en plus installable. 

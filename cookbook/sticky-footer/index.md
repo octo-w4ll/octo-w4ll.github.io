@@ -6,14 +6,14 @@ date: 2022-04-01
 layout: layouts/cookbook.njk
 ---
 
-## Cas d'usage
+## Cas d'usage étudié
 Placer le footer en bas de l’écran lorsque le contenu du site n’est pas suffisant pour remplir tout le viewport, ou en dessous de la ligne de flottaison si le contenu du site est plus grand que le viewport.
 
   <p class="illustration--centered">
-    <img width="300px" src="/sticky-footer.png" alt="Structure html header, content et footer">
+    <img width="500px" src="/sticky-footer.png" alt="Expansion d'un élément HTML entre le header et le footer">
   </p>
 
-## Recipe
+## Solution proposée
 Nous vous recommandons d’utiliser Flexbox, pour son côté moderne et flexible.
 Nous partons avec les hypothèses suivantes :
 * L’élément `html` a une `height` à `100%` (ou `100vh`).
