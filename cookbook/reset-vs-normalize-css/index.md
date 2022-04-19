@@ -15,7 +15,7 @@ Chaque navigateur peut apporter du style par défaut sur des éléments HTML. On
 
 ## Solutions proposées
 Au pluriel car il y a 2 écoles :
-* Annuler la plupart des styles définis par le user agent, d’avoir les éléments les plus neutres possible. Idéal si vous avez une maquette à respecter, une idée du rendu que vous souhaitez ou avez le moindre doute. Il s'agit d'une **réinitialisation**.
+* Annuler la plupart des styles définis par le user agent, afin d’avoir les éléments les plus neutres possible. Idéal si vous avez une maquette à respecter, une idée du rendu que vous souhaitez ou avez le moindre doute. Il s'agit d'une **réinitialisation**.
 * Accorder les rendus entre navigateurs, en conservant certains styles par défaut. Parfait pour avoir du style simple et satisfaire cette fameuse attente générale de présentation. Nous parlons alors de **normalisation**
 
 
