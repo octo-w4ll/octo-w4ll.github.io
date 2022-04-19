@@ -26,6 +26,10 @@ Traversant les âges, le bon vieux [reset CSS d’Eric A. Meyer](https://meyerwe
 
 ```css
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+
+/**
+* Reset paddings and margins.
+*/
 html,
 body,
 p,
@@ -53,6 +57,21 @@ h6 {
   padding: 0;
 }
 
+button,
+input,
+select {
+    margin: 0;
+}
+
+td,
+th {
+    padding: 0;
+}
+
+/**
+* Reset the font on headings
+*/
+
 h1,
 h2,
 h3,
@@ -63,15 +82,17 @@ h6 {
   font-weight: normal;
 }
 
+/**
+* Remove list style.
+*/
+
 ul {
   list-style: none;
 }
 
-button,
-input,
-select {
-  margin: 0;
-}
+/**
+* Set box-sizing to border-box on all elements.
+*/
 
 html {
   box-sizing: border-box;
@@ -81,24 +102,31 @@ html {
   box-sizing: inherit;
 }
 
+/**
+* Reset size on some media elements.
+*/
+
 img,
 video {
     height: auto;
     max-width: 100%;
 }
 
+/**
+* Remove iframe border.
+*/
+
 iframe {
     border: 0;
 }
 
+/**
+* Normalize table.
+*/
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
-}
-
-td,
-th {
-    padding: 0;
 }
 ```
 
