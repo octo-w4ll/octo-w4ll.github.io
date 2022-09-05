@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="fr"><head>
+    <meta charset="UTF-8">
+    <meta name="description" content="cookbook">
+    <link href="/css/index.css" rel="stylesheet">
+    <link href="https://unpkg.com/prismjs@1.26.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+
+    <title>Intégrer un lien d'évitement</title>
+  </head>
+  <body>
+    <header><nav role="navigation" aria-label="main navigation">
+  <a href="/"> W4ll @ OCTO Technology </a>
+  <a href="/cookbook"> Cookbook </a>
+</nav>
+</header>
+    <main>
+      
+<article class="cookbook">
+    <h1 class="cookbook__title">Intégrer un lien d'évitement</h1>
+    <p class="cookbook__parution"> Cette recette a été publiée le <time datetime="9/1/2022">9/1/2022</time> </p>
+    <div class="cookbook__content"><h2>Cas étudié</h2>
+<p>Dans certaines situations, l'utilisateur doit défiler ou passer par de nombreuses tabulations afin d'accéder au contenu souhaité au sein d'une page.</p>
+<h2>Solution proposée</h2>
+<p>Il est recommandé de mettre en place des liens d'évitement (ou également appelés liens d'accès rapide) qui permettent de faciliter la navigation en fournissant des raccourcis à l'intérieur d'une page. L'idée étant de permettre à l'utilisateur d'accéder au contenu souhaité sans qu'il ne doive parcourir toute la page. Les liens se placent en haut de page. Ils peuvent être visibles ou non, auquel cas, ils devront apparaître lors de la navigation au clavier, au premier appui de la touche tabulation. Cette solution est notamment très utilisée sur les sites d'e-commerces et/ou au contenu dense.</p>
+<h3>A noter</h3>
+<ul>
+<li>Les liens d'évitement doivent se <strong>trouver au début du code HTML</strong>, du moins avant tout autre lien dans la page afin de pouvoir paraître dès la première tabulation dans celle-ci.</li>
+<li>Les liens doivent être <strong>ordonnés dans le même ordre que le contenu du site</strong> auquel ils font références.</li>
+</ul>
+<h3>Un exemple d'intégration d'un lien d'évitement visible au focus avec React</h3>
+<pre class="language-js"><code class="language-js"><span class="token comment">/*App.tsx*/</span><br><span class="token operator">&lt;</span>a className<span class="token operator">=</span><span class="token string">"lien-d-evitement"</span> href<span class="token operator">=</span><span class="token string">"#contenu-principal"</span><span class="token operator">&gt;</span><br>    Aller au contenu principal<br><span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">&gt;</span><br><br><span class="token operator">&lt;</span>main id<span class="token operator">=</span><span class="token string">"contenu-principal"</span><span class="token operator">&gt;</span><br>    Lorem ipsum dolor sit amet<span class="token punctuation">,</span> consectetur adipiscing elit<span class="token punctuation">.</span> In lobortis erat tristique rutrum tincidunt<span class="token punctuation">.</span> <br><span class="token operator">&lt;</span><span class="token operator">/</span>main<span class="token operator">&gt;</span></code></pre>
+<pre class="language-css"><code class="language-css"><span class="token comment">/* LienDevitement.css */</span><br><span class="token selector">.lien-d-evitement</span> <span class="token punctuation">{</span><br>    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span><br>    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-100%<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">left</span><span class="token punctuation">:</span> -100vw<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token selector">.lien-d-evitement:focus-visible</span> <span class="token punctuation">{</span><br>    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span><br>    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>0%<span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<p>Exemple de code : <a href="https://codesandbox.io/s/lien-d-evitement-2t7y0k">Intégration d'un lien d'évitement avec React</a>.</p>
+</div>
+</article>
+
+    </main>
+    <footer>
+        Made with ✨ by W4LL
+    </footer>
+  
+
+</body></html>
