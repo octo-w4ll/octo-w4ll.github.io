@@ -29,67 +29,66 @@ Utiliser prefers-color-scheme pour de nouveau déclarer des variables CSS en uti
 ```css
 @media (prefers-color-scheme: light) {
     :root {
-        --primary: var(--black);
-        --secondary: var(--white);
+        --on-background: var(--black);
+        --background: var(--white);
     }
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --primary: var(--white);
-        --secondary: var(--black);
+        --on-background: var(--white);
+        --background: var(--black);
     }
 }
 ```
 
-Utiliser maintenant ces nouvelles variables directement dans votre CSS et le thème de l'utilisteur utilisé par défaut sera appliqué.
+Utilisez maintenant ces nouvelles variables directement dans votre CSS et le thème choisi par l'utilisateur sera appliqué.
+
+*A noter que sans action de l'utilisateur le thème light sera appliqué par défaut*
 
 ```css
 body {
-    background-color: var(--secondary);
-    color: var(--primary);
+    background-color: var(--background);
+    color: var(--on-background);
 }
 ```
 
 Afin de laisser la possibilité à l'utilisateur de changer son thème on peut facilement mettre un bouton en place et appliquer un nouveau thème en ajoutant ou retirant une class au body.
 
 ```js
-const btn = document.querySelector(".btn-toggle-theme");
+const updateTheme = () => {
+  const body = document.body;
 
-btn.addEventListener("click", () => {
-  if(document.body.classList.contains('dark-theme')) {
-    document.body.classList.remove("dark-theme");
-    document.body.classList.add("light-theme");
+  if(body.classList.contains('dark-theme')) {
+    body.classList.remove("dark-theme");
+    body.classList.add("light-theme");
   } else {
-    document.body.classList.remove("light-theme");
-    document.body.classList.add("dark-theme");
+    body.classList.remove("light-theme");
+    body.classList.add("dark-theme");
   }
-});
+};
 ```
 Puis on overwrite nos variables en CSS.
 ```css
 .dark-theme {
-    --primary: var(--white);
-    --secondary: var(--black);
+    --on-background: var(--white);
+    --background: var(--black);
 }
 
 .light-theme {
-    --primary: var(--black);
-    --secondary: var(--white);
+    --on-background: var(--black);
+    --background: var(--white);
 }
 
 body {
-    background-color: var(--secondary);
-    color: var(--primary);
+    background-color: var(--background);
+    color: var(--on-background);
 }
 
 button {
-    color: var(--secondary);
-    background-color: var(--primary);
+    color: var(--background);
+    background-color: var(--on-background);
 }
 ```
 
-## Résultat
-
-![Light mode activé](lightMode.png)
-![Dark mode activé](darkMode.png)
+>[Essayez-le en action sur Codesandbox](https://codesandbox.io/s/new-hill-ndfj61?file=/index.html)
