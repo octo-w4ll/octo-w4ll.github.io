@@ -6,7 +6,7 @@ layout: layouts/page.njk
 <h2>Nos recettes</h2>
 
 <section class="list recipe--list">
-  {% for recipe in collections.recipe | reverse %} {% if loop.index0 < 3 %}
+  {% for recipe in collections.recipe | reverse %}
   <article class="recipe recipe--list__item">
     <header class="recipe__title">
       {{ recipe.data.title }}
@@ -18,5 +18,5 @@ layout: layouts/page.njk
       <a href="{{ recipe.url }}">Lire la recette</a>
     </footer>
   </article>
-  {% endif %} {% endfor %}
+  {% endfor %}
 </section>
