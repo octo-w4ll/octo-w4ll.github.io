@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="fr"><head>
+    <meta charset="UTF-8">
+    <meta name="description" content="cookbook">
+    <link href="/css/index.css" rel="stylesheet">
+    <link href="https://unpkg.com/prismjs@1.26.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+
+    <title>Grille avec grid</title>
+  </head>
+  <body>
+    <header><nav role="navigation" aria-label="main navigation">
+  <a href="/"> W4ll @ OCTO Technology </a>
+  <a href="/cookbook"> Cookbook </a>
+</nav>
+</header>
+    <main>
+      
+<article class="cookbook">
+    <h1 class="cookbook__title">Grille avec grid</h1>
+    <p class="cookbook__parution"> Cette recette a été publiée le <time datetime="30/09/2022">30/09/2022</time> </p>
+    <div class="cookbook__content"><h2>Cas étudié</h2>
+<p>Afficher des éléments (comme des cartes) sous forme de colonne de manière responsive.</p>
+<h2>Solution proposée</h2>
+<p>Il n'est pas nécessaire d'avoir recours à de grandes librairies telles que bootstrap pour avoir un système de colonnes,
+très verbeuses dans le HTML à grands coups de classes. L'apparition et surtout le support grandissant de CSS grid par
+les navigateurs nous permet maintenant de l'utiliser à grande échelle. L'avantage associé est sur la maintenabilité, où
+une seule modification dans le CSS suffit à changer le nombre de colonnes, plutôt que plusieurs éléments avec une classe
+de type <code>col-sm-N</code>.
+Les éléments suivants sont à définir :</p>
+<ul>
+<li><code>--gap</code>: espace entre les éléments</li>
+<li><code>--max-column-count</code>: nombre maximum de colonnes</li>
+<li><code>--grid-item--min-width</code>: la largeur minimum des éléments à afficher</li>
+</ul>
+<pre class="language-css"><code class="language-css"><span class="token selector">.container</span> <span class="token punctuation">{</span><br>  <span class="token property">--gap</span><span class="token punctuation">:</span> 1rem<span class="token punctuation">;</span><br>  <span class="token property">--max-column-count</span><span class="token punctuation">:</span> 4<span class="token punctuation">;</span><br>  <span class="token property">--grid-item--min-width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span><br><br>  <span class="token property">--max-number-of-gaps-in-row</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--max-column-count<span class="token punctuation">)</span> - 1<span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token property">--total-gap-width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--max-number-of-gaps-in-row<span class="token punctuation">)</span> * <span class="token function">var</span><span class="token punctuation">(</span>--gap<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token property">--grid-item--max-width</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token punctuation">(</span>100% - <span class="token function">var</span><span class="token punctuation">(</span>--total-gap-width<span class="token punctuation">)</span><span class="token punctuation">)</span> / <span class="token function">var</span><span class="token punctuation">(</span>--max-column-count<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>  <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span><br>  <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>auto-fit<span class="token punctuation">,</span> <span class="token function">minmax</span><span class="token punctuation">(</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token function">var</span><span class="token punctuation">(</span>--grid-item--min-width<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">var</span><span class="token punctuation">(</span>--grid-item--max-width<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 1fr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>  <span class="token property">gap</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--gap<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span></code></pre>
+<pre class="language-html"><code class="language-html"><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+<p><a href="https://codepen.io/aghiles-dev/pen/RwyLgwq">Lien vers un codepen et crédits de l'auteur</a></p>
+</div>
+</article>
+
+    </main>
+    <footer>
+        Made with ✨ by W4LL
+    </footer>
+  
+
+</body></html>

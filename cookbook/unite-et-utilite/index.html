@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="fr"><head>
+    <meta charset="UTF-8">
+    <meta name="description" content="cookbook">
+    <link href="/css/index.css" rel="stylesheet">
+    <link href="https://unpkg.com/prismjs@1.26.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+
+    <title>Quelle unité pour quelle utilité</title>
+  </head>
+  <body>
+    <header><nav role="navigation" aria-label="main navigation">
+  <a href="/"> W4ll @ OCTO Technology </a>
+  <a href="/cookbook"> Cookbook </a>
+</nav>
+</header>
+    <main>
+      
+<article class="cookbook">
+    <h1 class="cookbook__title">Quelle unité pour quelle utilité</h1>
+    <p class="cookbook__parution"> Cette recette a été publiée le <time datetime="05/01/2023">05/01/2023</time> </p>
+    <div class="cookbook__content"><h2>Cas d'usage étudié</h2>
+<p>Plusieurs propriétés CSS comme <code>font-size</code>, <code>width</code>, <code>padding</code>, etc…, ont besoin d’une taille spécifique. Cette taille peut être exprimée de différentes manières. Il est donc important de choisir l'unité la plus appropriée selon les besoins.</p>
+<p>Il existe deux types d'unités de longueur en CSS : les unités absolues et les unités relatives.</p>
+<h2>Unités de longueur absolues</h2>
+<p>Les unités de longueur absolues ont généralement la même taille sur tous les appareils, cependant elles s'adaptent moins bien en cas de redimensionnement ou de zoom. Il est généralement déconseillé d'utiliser ces unités sauf pour garantir une taille fixe pour certaines choses comme les icônes ou les pages à imprimer.</p>
+<ul>
+<li><code>px</code> : unité en pixels.</li>
+<li><code>cm</code> : unité en centimètres (1cm = 37.8px).</li>
+<li><code>mm</code> : unité en millimètres (1mm = 3.78px, soit 1/10 de 1cm).</li>
+<li><code>in</code> : unité en pouces (1in = 96px).</li>
+<li><code>pt</code> : unité en points (1pt = 1.333px).</li>
+<li><code>pc</code> : unité en pica (1pc = 16px).</li>
+</ul>
+<h2>Unités de longueur relatives</h2>
+<p>Les unités de longueur relatives en CSS dépendent de facteurs tels que la taille de la police de l'élément parent ou la taille de la fenêtre du navigateur. C’est en général ce que l’on utilisera le plus pour créer des applications flexibles qui peuvent s'adapter à différentes situations, comme le zoom, le redimensionnement, etc…</p>
+<ul>
+<li><code>%</code> : unité en pourcentage relative à la taille de l'élément parent. On l'utilise essentiellement pour définir la largeur des éléments et permettre un redimensionnement facile.</li>
+<li><code>rem</code> : unité basée sur la taille de la police de l'élément racine (c'est-à-dire l'élément <code>html</code>), de sorte que si vous changez la taille de la police de base de votre site, tous les éléments utilisant des rem seront automatiquement redimensionnés en conséquence.</li>
+<li><code>em</code> : idem que pour les <code>rem</code> mais basé sur la taille de police de l'élément parent. Il est en général plus simple d'utiliser des <code>rem</code> pour justement ne pas avoir en prendre en compte l'élément parent mais seulement l’élément <code>html</code></li>
+<li><code>vh</code> : (viewport height) unité proportionnelle à la hauteur de la fenêtre du navigateur. Cela signifie qu’un élément avec une hauteur de <code>100vh</code> fera exactement  la hauteur de la fenêtre de votre navigateur.</li>
+<li><code>vw</code> : (viewport width) idem que pour <code>vh</code> mais par rapport à la largeur de la fenêtre du navigateur.</li>
+</ul>
+<p><em>Il est important de noter que les valeurs de <code>vw</code> et <code>vh</code> sont relatives à la taille de la fenêtre du navigateur, et non à la taille de l'écran de l'utilisateur. Cela signifie qu'elles peuvent varier sur des navigateurs ou des appareils différents</em></p>
+<ul>
+<li><code>vmin</code> : est égal à la valeur la plus petite entre <code>1vw</code> et <code>1vh</code>. Cela signifie qu'il prendra la valeur la plus petite entre 1% de la largeur de la fenêtre de navigation et 1% de la hauteur de la fenêtre de navigation. Il est utilisé pour définir des tailles qui restent proportionnelles à l'écran, mais qui s'adaptent automatiquement à différentes orientations d'écran (paysage ou portrait) et différentes résolutions d'écran.</li>
+<li><code>vmax</code> : idem que pour <code>vmin</code> mais en sélectionnant la plus grande valeur entre <code>1vw</code> et <code>1vh</code></li>
+<li><code>ch</code> : unité proportionnelle à la largeur de la chaîne “0” de la police courante utilisée. (par exemple si vous définissez la taille d’un élément à <code>4ch</code> il fera 4 fois la largeur de la chaîne “0”.</li>
+<li><code>ex</code> : unité proportionnelle à la hauteur de la minuscule "x" de la police courante utilisée.</li>
+</ul>
+</div>
+</article>
+
+    </main>
+    <footer>
+        Made with ✨ by W4LL
+    </footer>
+  
+
+</body></html>
