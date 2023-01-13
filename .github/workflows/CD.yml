@@ -1,7 +1,7 @@
 name: CD
 on:
   push:
-    branches: [ main, FEAT/init_blog ]
+    branches: [ main, FEAT/init_blog, feat/recette-quelle_unite_pour_quelle_utilite ]
 
 jobs:
   build:
@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [16.x]
 
     steps:
     - uses: actions/checkout@v2

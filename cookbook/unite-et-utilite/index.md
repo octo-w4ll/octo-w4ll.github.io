@@ -1,13 +1,13 @@
 ---
 title: Quelle unité pour quelle utilité
-description: Choisir la bonne unité selon les cas
+description: Absolue ou relative ? rem ou em ? Choisir la bonne unité selon le cas d'usage
 tags: ['recipe']
 date: 2023-01-05
 layout: layouts/cookbook.njk
 ---
 
 ## Cas d'usage étudié
-Plusieurs propriétés CSS comme `font-size`, `width`, `padding`, etc…, ont besoin d’une taille spécifique. Cette taille peut être exprimée de différentes manières.Il est donc important de choisir l'unité la plus appropriée selon les besoins.
+Plusieurs propriétés CSS comme `font-size`, `width`, `padding`, etc…, ont besoin d’une taille spécifique. Cette taille peut être exprimée de différentes manières. Il est donc important de choisir l'unité la plus appropriée selon les besoins.
 
 Il existe deux types d'unités de longueur en CSS : les unités absolues et les unités relatives.
 
